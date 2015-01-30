@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="NetCDFProject"
+  id="myeclipse.1419817492874"
+  context-root="/NetCDFProject"
+  j2ee-spec="6.0"
+  archive="NetCDFProject.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
