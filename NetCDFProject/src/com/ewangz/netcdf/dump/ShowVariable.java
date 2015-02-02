@@ -21,7 +21,7 @@ public class ShowVariable {
 	 * 
 	 * @功能  显示nc文件的数据,并返回一个StringBuffer对象  
 	 */
-	public static StringBuffer show(String fileName) {
+	public static StringBuffer show(String fileName, String variable) {
 		//以只读的形式打开nc类型的文件
 		NetcdfFile dataFile = null;
 		StringBuffer strBuff = new StringBuffer();
@@ -29,7 +29,7 @@ public class ShowVariable {
 			//打开文件
 			dataFile = NetcdfFile.open(fileName, null);
 			//以data指代取得的变量
-			Variable dataVar = dataFile.findVariable("data");
+			Variable dataVar = dataFile.findVariable(variable);
 			if (dataVar == null) {
 				System.out.println("can't find variable data");
 				return null;
@@ -107,7 +107,7 @@ public class ShowVariable {
 	}
 	
 	public static void main(String[] args) {
-		StringBuffer strBuff = ShowVariable.show("nc/simple_xy.nc");
-		System.out.println(strBuff.toString());
+		//StringBuffer strBuff = ShowVariable.show("nc/simple_xy.nc");
+		//System.out.println(strBuff.toString());
 	}
 }

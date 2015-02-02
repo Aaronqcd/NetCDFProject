@@ -11,6 +11,7 @@
     <script src="dist/js/bootstrap.min.js"></script>
     <script src="dist/js/bootstrap-contextmenu.js"></script><%--
     oncontextmenu='return false'--%><script src="dist/js/holder.js"></script>
+    <script src="dist/layer/layer.min.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body >
@@ -24,9 +25,7 @@
 					</ol>
 					<button type="button" class="btn btn-primary" onclick="show()">显示文件</button>
 				</div>
-				
 			</div>
-			
 		</div>
 		
 		<div class="row">
@@ -50,8 +49,8 @@
 		<!-- 右键菜单显示的内容 -->
 		<div id="context-menu">
 	      	<ul class="dropdown-menu" role="menu">
-	      		<input type="hidden" id="vari1" value="">
-                <li><a herf="javascript:void(0)" onclick="display()">声明展示</a></li>
+	      		<input type="hidden" id="vari1" value=""/>
+                <li><a id="state" herf="javascript:void(0)" onclick="display()">声明展示</a></li>
 	            <li><a>NcML展示</a></li>
 	      	</ul>
 	    </div>

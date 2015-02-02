@@ -100,19 +100,21 @@ public class FileController {
 		out.write(jsonArray.toString());
 	}
 	
-	public String showVariable(@RequestParam String fileName, HttpServletRequest request, 
+	/*public String showVariable(@RequestParam String fileName, HttpServletRequest request, 
 			HttpServletResponse response) {
 		String path = request.getSession().getServletContext().getRealPath("/")+"nc"+File.separator+fileName;
 		StringBuffer strBuff = ShowVariable.show(path);			//返回nc文件格式化后的信息
 		return strBuff.toString();
-	}
+	}*/
 	
 	@RequestMapping("showAttribute.do")
 	@ResponseBody 				//返回文本到jsp页面,而非返回某个页面
-	public void showAttribute(@RequestParam String fileName, HttpServletRequest request, 
-			HttpServletResponse response) {
+	public String showAttribute(@RequestParam String fileName, @RequestParam String variable,
+			HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("showAttribute");
 		String path = request.getSession().getServletContext().getRealPath("/")+"nc"+File.separator+fileName;
-		
+		StringBuffer strBuff = ShowVariable.show(path, variable);
+		System.out.println(strBuff.toString());
+		return strBuff.toString();
 	}
 }

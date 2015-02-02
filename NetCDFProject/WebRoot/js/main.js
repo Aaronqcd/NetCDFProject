@@ -9,20 +9,20 @@ $(function(){
       });
 });
 
-/*$('#allInfo').contextmenu({
-		
-        target: '#context-menu',
-        onItem: function (context, e) {
-        	alert(1);
-          //alert($(e.target).text());
-        }
-      });*/
-      
 function display() {
+	var fileName = $("#path").val();
+	var variable = $("#vari1").val();
+	$.ajax({
+		url: "showAttribute.do?fileName="+fileName+"&variable="+variable,
+		type: "POST",
+		dataType: "text",
+		success: function(data) {
+		    layer.alert(data, 9);
+		}
+	}); 
 }
 
 function over(vari){
-	//alert(1);
 	$("#vari1").val(vari);
 }
 //显示目录下面的所有文件
